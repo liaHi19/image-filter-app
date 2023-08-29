@@ -21,7 +21,9 @@ function App() {
   );
 
   async function onOpenFileClick() {
-    // TODO
+    const filePath = await window.electronAPI.openFile();
+    console.log(filePath);
+    setImageUrl(filePath);
   }
 
   return (
@@ -47,7 +49,7 @@ function App() {
                   flexGrow: 1,
                 }}
               >
-                Image Filter
+                Basic Electron
               </Typography>
               <Button onClick={() => setImageFilter(undefined)}>
                 Original
